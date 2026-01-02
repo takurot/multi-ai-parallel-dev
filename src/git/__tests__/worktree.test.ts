@@ -19,6 +19,8 @@ describe("GitWorktreeManager", () => {
 
     git = simpleGit(tempDir);
     await git.init();
+    await git.addConfig("user.name", "Test User");
+    await git.addConfig("user.email", "test@example.com");
     await fs.writeFile(path.join(tempDir, "README.md"), "# Test Repo");
     await git.add("README.md");
     await git.commit("Initial commit");
@@ -34,7 +36,7 @@ describe("GitWorktreeManager", () => {
       // Ignored
     }
     await fs.rm(tempDir, { recursive: true, force: true });
-    await fs.rm(worktreeDir, { recursive: true, force: true }).catch(() => {});
+    await fs.rm(worktreeDir, { recursive: true, force: true }).catch(() => { });
   });
 
   it("should create a worktree", async () => {

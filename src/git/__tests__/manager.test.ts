@@ -14,6 +14,8 @@ describe("GitManager", () => {
     tempDir = await fs.mkdtemp(path.join(os.tmpdir(), "git-manager-test-"));
     git = simpleGit(tempDir);
     await git.init();
+    await git.addConfig("user.name", "Test User");
+    await git.addConfig("user.email", "test@example.com");
     // Create a dummy file and commit it to have a 'main' branch
     await fs.writeFile(path.join(tempDir, "README.md"), "# Test Repo");
     await git.add("README.md");
