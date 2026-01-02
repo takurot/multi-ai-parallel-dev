@@ -237,18 +237,18 @@ src/git/
 
 ### PR-05: Tool Adapter Interface
 **依存**: PR-01  
-**ステータス**: `[ ]`  
+**ステータス**: `[x]`  
 **担当**: -  
 **見積もり**: 2時間
 
 | サブタスク | 状態 |
 |-----------|------|
-| `[ ]` ToolAdapter インターフェース定義 |
-| `[ ]` ExecutionResult 型定義 |
-| `[ ]` ReviewResult 型定義 |
-| `[ ]` CostEstimate 型定義 |
-| `[ ]` TaskContext 型定義 |
-| `[ ]` アダプターレジストリ実装 |
+| `[x]` ToolAdapter インターフェース定義 |
+| `[x]` ExecutionResult 型定義 |
+| `[x]` ReviewResult 型定義 |
+| `[x]` CostEstimate 型定義 |
+| `[x]` TaskContext 型定義 |
+| `[x]` アダプターレジストリ実装 |
 
 **成果物**:
 ```
@@ -256,12 +256,14 @@ src/adapters/
 ├── types.ts
 ├── interface.ts
 ├── registry.ts
-└── base-adapter.ts
+├── base-adapter.ts
+├── mock-adapter.ts
+└── index.ts
 ```
 
 **完了条件**:
-- [ ] インターフェースが定義されている
-- [ ] モックアダプターでテストが通る
+- [x] インターフェースが定義されている
+- [x] モックアダプターでテストが通る
 
 ---
 
