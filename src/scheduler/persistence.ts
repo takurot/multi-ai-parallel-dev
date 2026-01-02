@@ -1,15 +1,20 @@
 /**
  * Persistence layer for the scheduler using SQLite
  */
-import Database from "better-sqlite3";
+import { createRequire } from "node:module";
+import type DatabaseConstructor from "better-sqlite3";
 import { RunState, Task, TaskState } from "./types";
+
+const require = createRequire(import.meta.url);
+const Database = require("better-sqlite3") as DatabaseConstructor;
+type DatabaseInstance = InstanceType<DatabaseConstructor>;
 
 export interface PersistenceOptions {
   dbPath?: string;
 }
 
 export class Persistence {
-  private db: Database.Database;
+  private db: DatabaseInstance;
   private dbPath: string;
 
   constructor(options: PersistenceOptions = {}) {
