@@ -1,0 +1,19 @@
+import { defineConfig } from "vitest/config";
+
+export default defineConfig({
+  test: {
+    environment: "node",
+    deps: {
+      optimizer: {
+        ssr: {
+          exclude: ["better-sqlite3"],
+        },
+      },
+    },
+    server: {
+      deps: {
+        external: ["better-sqlite3"],
+      },
+    },
+  },
+});
