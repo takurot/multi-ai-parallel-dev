@@ -36,7 +36,7 @@ describe("GitWorktreeManager", () => {
       // Ignored
     }
     await fs.rm(tempDir, { recursive: true, force: true });
-    await fs.rm(worktreeDir, { recursive: true, force: true }).catch(() => { });
+    await fs.rm(worktreeDir, { recursive: true, force: true }).catch(() => {});
   });
 
   it("should create a worktree", async () => {
