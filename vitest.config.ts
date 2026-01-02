@@ -10,5 +10,10 @@ export default defineConfig({
         },
       },
     },
+    server: {
+      deps: {
+        external: ["better-sqlite3"],
+      },
+    },
   },
 });
