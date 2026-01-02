@@ -43,7 +43,7 @@ export class OrchestratorError extends Error {
   constructor(
     public code: ErrorCode,
     message: string,
-    public details?: any,
+    public details?: unknown,
   ) {
     super(`[${code}] ${message}`);
     this.name = "OrchestratorError";
