@@ -1,0 +1,165 @@
+{
+  "$ref": "#/definitions/TasksFile",
+  "definitions": {
+    "TasksFile": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "default": "1.0"
+        },
+        "project": {
+          "type": "string"
+        },
+        "defaultRepo": {
+          "type": "string"
+        },
+        "defaultTool": {
+          "type": "string"
+        },
+        "defaultMergePolicy": {
+          "type": "string",
+          "enum": [
+            "pr-only",
+            "auto-merge"
+          ],
+          "default": "pr-only"
+        },
+        "tasks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "title": {
+                "type": "string"
+              },
+              "repo": {
+                "type": "string"
+              },
+              "tool": {
+                "type": "string"
+              },
+              "dependsOn": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "default": []
+              },
+              "mergePolicy": {
+                "type": "string",
+                "enum": [
+                  "pr-only",
+                  "auto-merge"
+                ]
+              },
+              "costTier": {
+                "type": "string",
+                "enum": [
+                  "low",
+                  "medium",
+                  "high"
+                ]
+              },
+              "complexityHint": {
+                "type": "string"
+              },
+              "execution": {
+                "type": "object",
+                "properties": {
+                  "maxRetries": {
+                    "type": "number",
+                    "default": 1
+                  },
+                  "escalateOnRetry": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "timeoutMinutes": {
+                    "type": "number",
+                    "default": 30
+                  }
+                },
+                "additionalProperties": false,
+                "default": {}
+              },
+              "validation": {
+                "type": "object",
+                "properties": {
+                  "enabled": {
+                    "type": "boolean",
+                    "default": true
+                  },
+                  "cmd": {
+                    "type": "string"
+                  },
+                  "lintCmd": {
+                    "type": "string"
+                  },
+                  "stopOnFailure": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "maxValidationRetries": {
+                    "type": "number",
+                    "default": 2
+                  }
+                },
+                "required": [
+                  "cmd"
+                ],
+                "additionalProperties": false
+              },
+              "review": {
+                "type": "object",
+                "properties": {
+                  "enabled": {
+                    "type": "boolean",
+                    "default": true
+                  },
+                  "reviewerTool": {
+                    "type": "string"
+                  },
+                  "strictness": {
+                    "type": "string",
+                    "enum": [
+                      "lenient",
+                      "normal",
+                      "strict"
+                    ],
+                    "default": "normal"
+                  },
+                  "humanGate": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "autoFix": {
+                    "type": "boolean",
+                    "default": false
+                  }
+                },
+                "additionalProperties": false,
+                "default": {}
+              }
+            },
+            "required": [
+              "id",
+              "title"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "project",
+        "tasks"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}
