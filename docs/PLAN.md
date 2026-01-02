@@ -101,20 +101,20 @@ graph TD
 
 ### PR-01: Project Setup & Configuration
 **依存**: なし  
-**ステータス**: `[ ]`  
+**ステータス**: `[x]`  
 **担当**: -  
 **見積もり**: 2時間
 
 | サブタスク | 状態 |
 |-----------|------|
-| `[ ]` TypeScript + Node.js プロジェクト初期化 |
-| `[ ]` package.json 設定（scripts, dependencies） |
-| `[ ]` tsconfig.json 設定 |
-| `[ ]` ESLint + Prettier 設定 |
-| `[ ]` ディレクトリ構造作成 |
-| `[ ]` 設定ファイルスキーマ定義（config.yaml, credentials.yaml） |
-| `[ ]` 環境変数ローダー実装 |
-| `[ ]` 基本的なエラー型定義 |
+| `[x]` TypeScript + Node.js プロジェクト初期化 |
+| `[x]` package.json 設定（scripts, dependencies） |
+| `[x]` tsconfig.json 設定 |
+| `[x]` ESLint + Prettier 設定 |
+| `[x]` ディレクトリ構造作成 |
+| `[x]` 設定ファイルスキーマ定義（config.yaml, credentials.yaml） |
+| `[x]` 環境変数ローダー実装 |
+| `[x]` 基本的なエラー型定義 |
 
 **成果物**:
 ```
